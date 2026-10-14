@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102a43">
+<title>British Arcade — The Cabinet Is Open</title>
+<style>
+:root{--navy:#102a43;--navy2:#163b5c;--blue:#1769aa;--blue2:#d9eaf7;--red:#d4351c;--yellow:#f4c95d;--ink:#122231;--muted:#536779;--paper:#f4f7fa;--line:#d6e0e8;--white:#fff;--green:#16794b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer}a{color:inherit}.topline{height:6px;background:linear-gradient(90deg,var(--red) 0 33.33%,#fff 33.33% 66.66%,var(--blue) 66.66%)}
+.site-header{background:var(--navy);color:#fff}.head-inner{max-width:1220px;margin:auto;padding:19px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:13px;text-decoration:none}.brand-mark{width:42px;height:42px;border:1px solid rgba(255,255,255,.32);border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden}.brand-mark svg{width:36px;height:36px}.brand-copy{font-weight:900;letter-spacing:.035em;line-height:1.05;font-size:19px}.brand-copy small{display:block;color:#c9d9e7;font-size:10px;font-weight:700;letter-spacing:.15em;margin-top:5px}.head-note{font-size:12px;color:#cddce8;letter-spacing:.04em;text-align:right}.head-note strong{display:block;color:#fff;font-size:13px;margin-bottom:4px}
+main{max-width:1220px;margin:0 auto;padding:30px}.breadcrumb{font-size:12px;color:var(--muted);margin:0 0 22px;letter-spacing:.01em}.hero{display:grid;grid-template-columns:1.12fr .88fr;background:#fff;border:1px solid var(--line);min-height:280px;margin-bottom:36px;box-shadow:0 5px 15px rgba(16,42,67,.045)}.hero-copy{padding:clamp(25px,5vw,54px);align-self:center}.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);font-size:11px;display:flex;align-items:center;gap:8px}.eyebrow:before{content:"";width:22px;height:3px;background:var(--red)}h1{font-size:clamp(36px,5vw,64px);letter-spacing:-.055em;line-height:.99;margin:17px 0 15px;color:var(--navy);font-weight:900}h1 span{color:var(--blue)}.hero-copy p{font-size:15px;line-height:1.7;color:var(--muted);max-width:510px;margin:0}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.primary,.secondary{border:0;padding:13px 18px;font-size:12px;font-weight:850;letter-spacing:.04em;text-transform:uppercase;transition:transform .16s,background .16s}.primary{color:#fff;background:var(--blue);box-shadow:inset 0 -3px rgba(0,0,0,.12)}.primary:hover{background:#0f548b;transform:translateY(-2px)}.secondary{background:#fff;color:var(--navy);border:1px solid #b9c9d6}.secondary:hover{background:#f0f5f9}.hero-art{position:relative;overflow:hidden;background:#d9eaf5;min-height:280px;border-left:1px solid var(--line);display:flex;align-items:center;justify-content:center}.hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(130deg,transparent 0 49.5%,rgba(255,255,255,.55) 50%,transparent 50.5%),repeating-linear-gradient(0deg,transparent 0 23px,rgba(23,105,170,.08) 24px 25px)}.art-water{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 12%,rgba(255,255,255,.8),transparent 38%),linear-gradient(160deg,#d7eaf6,#9fc9df)}.hero-boat{position:relative;width:126px;height:224px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(8px 10px 0 rgba(16,42,67,.18))}.art-label{position:absolute;left:20px;bottom:17px;background:var(--navy);color:#fff;padding:9px 12px;font-size:10px;font-weight:800;letter-spacing:.13em}.art-stamp{position:absolute;right:22px;top:22px;border:1px solid rgba(16,42,67,.24);background:rgba(255,255,255,.68);padding:10px 12px;color:var(--navy);font-weight:900;font-size:10px;letter-spacing:.1em}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 17px}.section-heading h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.04em;color:var(--navy);margin:0;font-weight:900}.section-heading p{color:var(--muted);font-size:12px;margin:0 0 3px}.game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.game-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);padding:0;display:grid;grid-template-columns:102px 1fr;min-height:170px;transition:transform .16s,box-shadow .16s,border-color .16s;box-shadow:0 4px 12px rgba(16,42,67,.035)}.game-card:hover{transform:translateY(-3px);box-shadow:0 11px 22px rgba(16,42,67,.1);border-top-color:var(--red)}.card-icon{background:#edf4f8;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;min-height:166px;overflow:hidden}.boat-icon{width:66px;height:118px;object-fit:contain;image-rendering:pixelated}.flag-ball-icon{width:64px;height:64px;filter:drop-shadow(0 4px 0 rgba(16,42,67,.15))}.knife-icon{width:66px;height:66px}.hammer-icon{width:66px;height:66px}.card-body{padding:20px;display:flex;flex-direction:column;align-items:flex-start}.card-number{font-size:10px;font-weight:900;color:var(--blue);letter-spacing:.12em}.card-body h3{margin:8px 0 7px;color:var(--navy);font-size:18px;letter-spacing:-.025em}.card-body p{font-size:12px;line-height:1.55;color:var(--muted);margin:0 0 16px;max-width:390px}.card-body button{margin-top:auto}.card-play{border:0;background:transparent;color:var(--blue);font-size:11px;letter-spacing:.06em;font-weight:900;padding:0;text-transform:uppercase}.card-play span{display:inline-block;transition:transform .15s}.card-play:hover span{transform:translateX(4px)}.note-bar{margin-top:25px;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px;background:#e5eef5;border-left:4px solid var(--blue);color:var(--navy);font-size:12px}.note-bar strong{font-weight:850}.note-bar span{color:var(--muted)}
+#arcade{background:#fff;border:1px solid var(--line);box-shadow:0 5px 18px rgba(16,42,67,.05);padding:clamp(14px,3vw,28px)}.game-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}.game-head h2{font-size:clamp(24px,3.5vw,34px);margin:0 0 6px;letter-spacing:-.04em;color:var(--navy)}.game-head p{font-size:13px;line-height:1.6;margin:0;color:var(--muted);max-width:650px}.hud{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.hud span{display:flex;align-items:center;min-height:39px;padding:9px 12px;border:1px solid var(--line);background:#f4f7fa;color:var(--navy);font-size:11px;font-weight:850;letter-spacing:.05em}.hud span:first-child{border-left:4px solid var(--blue)}.strikes{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 12px;padding:10px 12px;background:#fbf0ed;border:1px solid #f0d0ca}.strikes strong{font-size:10px;letter-spacing:.09em;color:#8f2619;margin-right:4px}.strike-box{width:22px;height:22px;display:grid;place-items:center;border:1px solid #c9d4de;color:#b7c4ce;background:#fff;font-size:14px;font-weight:900}.strike-box.used{background:var(--red);border-color:var(--red);color:#fff}.stage-wrap{border:1px solid #102a43;background:#102a43;padding:5px;position:relative;box-shadow:0 7px 0 rgba(16,42,67,.1)}canvas{display:block;width:100%;height:auto;aspect-ratio:5/3;image-rendering:pixelated;touch-action:none;background:#146b8e;cursor:crosshair}.overlay{position:absolute;inset:5px;background:rgba(9,28,47,.76);display:flex;align-items:center;justify-content:center;padding:16px;text-align:center}.overlay.hidden{display:none!important}.overlay-card{width:min(450px,100%);background:#fff;border-top:5px solid var(--red);padding:27px 26px;box-shadow:0 13px 38px rgba(0,0,0,.24)}.overlay-kicker{text-transform:uppercase;color:var(--blue);font-weight:900;letter-spacing:.16em;font-size:10px}.overlay-card h3{font-size:clamp(25px,4vw,35px);letter-spacing:-.04em;line-height:1.06;margin:10px 0;color:var(--navy)}.overlay-card p{white-space:pre-line;color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 19px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.controls button{background:#eaf2f8;border:1px solid #c8d8e4;color:var(--navy);font-size:11px;font-weight:850;padding:11px 14px}.controls button:hover{background:#d9eaf7}.help{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6}.footer{margin-top:38px;padding:20px 0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;color:#637789;font-size:11px}.footer strong{color:var(--navy)}.hidden{display:none!important}
+@media(max-width:780px){main{padding:20px}.hero{grid-template-columns:1fr}.hero-art{min-height:210px;border-left:0;border-top:1px solid var(--line)}.hero-boat{height:180px;width:101px}.game-grid{grid-template-columns:1fr}.head-inner{padding:16px 20px}.note-bar{align-items:flex-start;flex-direction:column}}
+@media(max-width:460px){main{padding:13px}.head-inner{padding:14px}.brand-copy{font-size:16px}.head-note{font-size:10px}.head-note strong{font-size:11px}.game-card{grid-template-columns:80px 1fr;min-height:155px}.card-icon{min-height:155px}.card-body{padding:14px}.card-body h3{font-size:15px}.card-body p{font-size:11px}.hero-copy{padding:25px 20px}.hero-art{min-height:185px}.game-head{flex-direction:column}.game-head>.secondary{width:100%}.footer{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header class="site-header"><div class="head-inner"><a href="#top" class="brand" aria-label="British Arcade home"><span class="brand-mark"><svg viewBox="0 0 64 64" role="img" aria-label="British flag ball"><defs><clipPath id="brandBall"><circle cx="32" cy="32" r="29"/></clipPath></defs><g clip-path="url(#brandBall)"><rect width="64" height="64" fill="#174a8b"/><path d="M0 0L64 64M64 0L0 64" stroke="#fff" stroke-width="15"/><path d="M0 0L64 64M64 0L0 64" stroke="#d4351c" stroke-width="6"/><path d="M32 0V64M0 32H64" stroke="#fff" stroke-width="20"/><path d="M32 0V64M0 32H64" stroke="#d4351c" stroke-width="9"/></g></svg></span><span class="brand-copy">BRITISH ARCADE<small>THE NATIONAL ARCADE CABINET</small></span></a><div class="head-note"><strong>THE CABINET IS OPEN</strong>Four games. One leaderboard. No coins required.</div></div></header>
+<main id="top">
+  <p class="breadcrumb">HOME <span aria-hidden="true">/</span> ARCADE COLLECTION</p>
+  <section id="home">
+    <div class="hero"><div class="hero-copy"><div class="eyebrow">A VERY BRITISH ARCADE</div><h1>BIG PIXELS.<br><span>BIG ISSUES.</span></h1><p>A collection of quick-fire arcade games inspired by British headlines, public policy and the occasional national debate. Pick a cabinet and go for a high score.</p><div class="hero-actions"><button class="primary" id="playAllBtn">CHOOSE A GAME ↓</button><button class="secondary" id="howBtn">HOW TO PLAY</button></div></div><div class="hero-art"><div class="art-water"></div><div class="art-stamp">EST. 2003-ISH</div><img class="hero-boat" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Pixel-art top-down inflatable boat packed with passengers"><div class="art-label">PIXELS OVER POLITICS</div></div></div>
+    <div class="section-heading" id="cabinets"><div><h2>Choose your cabinet</h2><p>Choose a game to view its controls and start playing.</p></div><p>4 GAMES AVAILABLE</p></div>
+    <div class="game-grid">
+      <article class="game-card"><div class="card-icon"><img class="boat-icon" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Top-down crowded dinghy sprite"></div><div class="card-body"><div class="card-number">CABINET 01 · SURVIVAL</div><h3>Stop the Boats</h3><p>Three sea lanes. A Coastguard launch. Let five boats slip past and your time in Number 10 is over.</p><button class="card-play" data-game="boats">PLAY GAME <span>→</span></button></div></article>
+      <article class="game-card"><div class="card-icon"><svg class="flag-ball-icon" viewBox="0 0 80 80" role="img" aria-label="Round Union Jack ball"><defs><clipPath id="ballClip"><circle cx="40" cy="37" r="31"/></clipPath></defs><ellipse cx="40" cy="71" rx="23" ry="4" fill="#183b5a" opacity=".18"/><g clip-path="url(#ballClip)"><rect x="9" y="6" width="62" height="62" fill="#174a8b"/><path d="M8 6L72 68M72 6L8 68" stroke="white" stroke-width="15"/><path d="M8 6L72 68M72 6L8 68" stroke="#d4351c" stroke-width="6"/><path d="M40 6V68M9 37H71" stroke="white" stroke-width="21"/><path d="M40 6V68M9 37H71" stroke="#d4351c" stroke-width="10"/></g><circle cx="40" cy="37" r="31" fill="none" stroke="#fff" stroke-width="2"/><path d="M18 18Q38 5 58 18" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="3"/></svg></div><div class="card-body"><div class="card-number">CABINET 02 · REFLEX</div><h3>Avoid Brexit</h3><p>Keep the round Union Jack ball airborne and thread it through the Brexit banners. One collision ends the run.</p><button class="card-play" data-game="brexit">PLAY GAME <span>→</span></button></div></article>
+      <article class="game-card"><div class="card-icon"><svg class="knife-icon" viewBox="0 0 80 80" role="img" aria-label="Pixel-style shank icon"><path d="M18 61L47 32" stroke="#23384b" stroke-width="13" stroke-linecap="square"/><path d="M17 61L34 44" stroke="#a65d3a" stroke-width="8" stroke-linecap="square"/><path d="M39 37L58 12Q64 7 67 10L46 43Z" fill="#c8d5df" stroke="#536779" stroke-width="2"/><path d="M43 40L49 34" stroke="#fff" stroke-width="2"/><path d="M13 66L19 60" stroke="#102a43" stroke-width="3"/></svg></div><div class="card-body"><div class="card-number">CABINET 03 · SNAKE</div><h3>Find the Shanks</h3><p>Classic Snake in London. Collect the hooded shank sprites, grow longer and avoid your own tail.</p><button class="card-play" data-game="snake">PLAY GAME <span>→</span></button></div></article>
+      <article class="game-card"><div class="card-icon"><svg class="hammer-icon" viewBox="0 0 80 80" role="img" aria-label="Hammer and red policy card"><path d="M46 47L63 64" stroke="#80512e" stroke-width="9" stroke-linecap="square"/><path d="M35 17L52 8L66 22L56 34Z" fill="#1769aa" stroke="#102a43" stroke-width="3"/><path d="M25 24L38 12L53 28L41 40Z" fill="#d4351c" stroke="#102a43" stroke-width="3"/><rect x="13" y="44" width="34" height="24" rx="1" fill="#fff" stroke="#d4351c" stroke-width="3"/><path d="M19 51H41M19 57H36M19 62H39" stroke="#d4351c" stroke-width="3"/></svg></div><div class="card-body"><div class="card-number">CABINET 04 · QUICK-FIRE</div><h3>Whack the Politics</h3><p>Whack policy promises as they pop out: benefits, pensions, rejoining the EU and a long list of Burnham-era talking points. Miss five and you resign.</p><button class="card-play" data-game="spin">PLAY GAME <span>→</span></button></div></article>
+    </div>
+    <div class="note-bar"><strong>HOW IT WORKS</strong><span>Keyboard, mouse and touch controls · Best scores saved on this device.</span></div>
+  </section>
+  <section id="arcade" class="hidden"><div class="game-head"><div><div class="eyebrow" style="margin-bottom:9px">NOW PLAYING</div><h2 id="gameTitle">MINIGAME</h2><p id="gameDesc"></p></div><button class="secondary" id="menuBtn">← ALL CABINETS</button></div><div class="hud"><span id="scoreLabel">SCORE&nbsp; 0</span><span id="timeLabel">MODE&nbsp; ENDLESS</span><span id="bestLabel">BEST&nbsp; 0</span></div><div id="strikePanel" class="strikes hidden"><strong>PRIME MINISTER STRIKES</strong><div id="strikeIcons" style="display:flex;gap:6px"></div><span id="strikeNote" style="font-size:11px;color:#8f2619">Five missed boats = resignation.</span></div><div class="stage-wrap"><canvas id="game" width="600" height="360" aria-label="Arcade game play area"></canvas><div class="overlay" id="overlay"><div class="overlay-card"><div class="overlay-kicker" id="overlayKicker">BRITISH ARCADE · GAME READY</div><h3 id="overlayTitle">READY?</h3><p id="overlayText">Press start when you are ready.</p><button class="primary" id="startBtn">START GAME →</button></div></div></div><div class="controls" id="controls"></div><div class="help" id="helpText">Controls will appear here.</div></section>
+  <footer class="footer"><span><strong>BRITISH ARCADE</strong> · Unofficial satire, handmade pixels.</span><span>High scores stay in your browser.</span></footer>
+</main>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const canvas = $('game'), ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.imageSmoothingEnabled = false;
+  const home = $('home'), arcade = $('arcade'), overlay = $('overlay');
+  
+
+  // ---- Pixel-art boats, generated in code so every pixel lines up and stays perfectly straight ----
+  function px(w,h,paint){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');paint((x,y,col,pw=1,ph=1)=>{g.fillStyle=col;g.fillRect(x,y,pw,ph)});return c}
+  function flipY(c){const f=document.createElement('canvas');f.width=c.width;f.height=c.height;const g=f.getContext('2d');g.translate(0,c.height);g.scale(1,-1);g.drawImage(c,0,0);return f}
+  function buildDinghy(){
+    const widths=[6,10,12,14,16,18],LAST=29;
+    const rowW=r=>r<6?widths[r]:18;
+    const inside=(x,r)=>{if(r<0||r>LAST)return false;const w=rowW(r),x0=(18-w)/2;return x>=x0&&x<x0+w};
+    const crew=[['#2a1d17','#d9a67a'],['#c9a24a','#e8bf99'],['#16110f','#8d5a3b'],['#5a3a24','#c88f62'],['#16110f','#6b4228'],['#2a1d17','#e2b48c'],['#7a4a22','#c98f64'],['#16110f','#9a6a48']];
+    return px(18,32,p=>{
+      for(let r=0;r<=LAST;r++){
+        const w=rowW(r),x0=(18-w)/2,x1=x0+w-1;
+        for(let x=x0;x<=x1;x++){
+          const dl=x-x0,dr=x1-x,d=Math.min(dl,dr),left=dl<=dr;let col;
+          if(!inside(x,r-1)||d===0||r===LAST)col='#161d25';
+          else if(r>=27)col=r===27?'#7b8793':'#4b5662';
+          else if(d<=3){
+            const seam=r%7===6;
+            col=left?(d===2?'#7b8793':'#4b5662'):(d===2?'#4b5662':'#2f3842');
+            if(seam)col='#2f3842';
+          }else col=r%5===0?'#76633f':'#8f7a58';
+          p(x,r,col);
+        }
+      }
+      // two rows of life-jacketed passengers, four deep
+      let n=0;
+      for(const y0 of [6,11,16,21])for(const x of [4,10]){
+        const [hair,skin]=crew[n++%crew.length];
+        p(x+1,y0,hair,2,1);p(x+1,y0+1,skin,2,1);
+        p(x,y0+2,'#ff7a1a',4,1);p(x,y0+3,'#c9560c',4,1);
+        p(x+1,y0+2,'#ffd27a',2,1);
+      }
+      // outboard motor on the stern
+      p(6,30,'#2b3238',6,1);p(7,31,'#454e56',4,1);p(8,30,'#69737c',2,1);
+    });
+  }
+  function buildLaunch(){
+    const widths=[4,6,8,10,12],LAST=18;
+    const rowW=r=>r<5?widths[r]:12;
+    const inside=(x,r)=>{if(r<0||r>LAST)return false;const w=rowW(r),x0=(12-w)/2;return x>=x0&&x<x0+w};
+    return px(12,20,p=>{
+      for(let r=0;r<=LAST;r++){
+        const w=rowW(r),x0=(12-w)/2,x1=x0+w-1;
+        for(let x=x0;x<=x1;x++){
+          const dl=x-x0,dr=x1-x,d=Math.min(dl,dr),left=dl<=dr;let col;
+          if(!inside(x,r-1)||d===0||r===LAST)col='#0b2d46';
+          else if(d<=2)col=left?(d===1?'#1d5f8f':'#2f82b8'):(d===1?'#15486e':'#1d5f8f');
+          else col=r%4===0?'#c5d0d8':'#dfe7ec';
+          p(x,r,col);
+        }
+      }
+      p(3,5,'#d4351c',6,1);                      // red bow stripe
+      p(3,7,'#0b2d46',6,1);p(3,8,'#f4f8fa',6,6); // wheelhouse
+      p(4,8,'#4fa3c7',4,2);                      // windscreen
+      p(3,12,'#d4351c',6,1);                     // roof stripe
+      p(4,10,'#2d8cff',2,1);p(6,10,'#ff3b30',2,1);// light bar
+      p(2,19,'#2b3238',2,1);p(8,19,'#2b3238',2,1);// twin outboards
+    });
+  }
+  const dinghyUp=buildDinghy(), dinghySprite=flipY(dinghyUp), launchSprite=buildLaunch();
+  // Static images on the page use the same sprite (bow pointing down the screen, no tilt).
+  document.querySelectorAll('img.hero-boat,img.boat-icon').forEach(i=>{i.src=dinghySprite.toDataURL('image/png')});
+  const BALL_X = 105, BALL_R = 15, PIPE_W = 43, PIPE_GAP = 122, SNAKE_CELL = 30, BOARD_N = 12, BOARD_X = (600 - 12*30) / 2;
+  const laneX = [100, 300, 500], laneW = W / 3, boatY = H - 83;
+  const gameNames = {
+    boats: ['STOP THE BOATS', 'Move the Coastguard launch between the three straight lanes. Intercept each dinghy at the rescue line. Five missed boats means resignation.'],
+    brexit: ['AVOID BREXIT', 'Tap or press Space to give the flag ball a small lift. Pass through the gaps and avoid the red Brexit banners. One collision ends the run.'],
+    snake: ['FIND THE SHANKS', 'Use the arrow keys or WASD to steer through London. Collect hooded shank sprites to grow longer. Don’t hit the walls or your tail.'],
+    spin: ['WHACK THE POLITICS', 'Tap the colourful protest placards as they pop up. Build a combo and watch the pace rise. Miss five cards and you resign.']
+  };
+  let current = '', running = false, raf = 0, last = 0, score = 0, bests = loadBests(), game = {}, touchStart = null, draggingBoat = false;
+  const placards = [{bar:'#d4351c',bg:'#ffe1dc'},{bar:'#1769aa',bg:'#d6ebfb'},{bar:'#16a05a',bg:'#d9f6e5'},{bar:'#f2a900',bg:'#fff1c2'},{bar:'#8a3ffc',bg:'#ebddff'},{bar:'#ff6f1f',bg:'#ffe3cf'},{bar:'#e5338d',bg:'#ffd9ec'},{bar:'#0aa8a8',bg:'#d3f5f3'}];
+  const policies = ['BENEFITS BOOST', 'PENSIONS', 'MORE MONEY', 'REJOIN THE EU', 'BURNHAM BUSES', 'TRIPLE LOCK', 'BUS FARES', 'CLEAN AIR ZONE', 'MAYORAL POWERS', 'COUNCIL TAX', 'FREE BUS RIDES', 'WAITING LISTS', 'COST OF LIVING', 'BUS FRANCHISING', 'MANCHESTER METRO', 'LOCAL TAX RISE', 'NORTHERN TRANSPORT', 'PUBLIC SPENDING', 'U- TURN', 'GREEN POLICIES', 'HOUSING TARGETS', 'NHS BACKLOGS'];
+  function loadBests(){try{return JSON.parse(localStorage.getItem('britishArcadeBestsV3')||'{}')}catch(e){return {}}}
+  function saveBest(){if(score>(bests[current]||0)){bests[current]=score;try{localStorage.setItem('britishArcadeBestsV3',JSON.stringify(bests))}catch(e){}}}
+  function addScore(n=1){score+=n;saveBest()}
+  function setHud(){
+    $('scoreLabel').textContent='SCORE  '+score;
+    if(current==='boats')$('timeLabel').textContent='STRIKES  '+(game.strikes||0)+'/5';
+    else if(current==='brexit')$('timeLabel').textContent='GATES  '+score;
+    else if(current==='snake')$('timeLabel').textContent='LENGTH  '+((game.snake&&game.snake.length)||3);
+    else if(current==='spin')$('timeLabel').textContent='COMBO  '+(game.combo||0)+'×';
+    $('bestLabel').textContent='BEST  '+(bests[current]||0);
+    if(current==='boats'||current==='spin'){
+      const n=current==='boats'?(game.strikes||0):(game.misses||0);
+      $('strikeNote').textContent=current==='boats'?'Five missed boats = resignation.':'Five missed cards = resignation.';
+      $('strikePanel').classList.remove('hidden');
+      $('strikeIcons').innerHTML=Array.from({length:5},(_,i)=>`<span class="strike-box ${i<n?'used':''}">${i<n?'×':'·'}</span>`).join('');
+    }else $('strikePanel').classList.add('hidden');
+  }
+  function pxText(text,x,y,size=14,color='#fff',align='left'){ctx.fillStyle=color;ctx.font=`900 ${size}px ui-monospace, SFMono-Regular, Consolas, monospace`;ctx.textAlign=align;ctx.textBaseline='top';ctx.fillText(text,Math.round(x),Math.round(y))}
+  function rect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
+  function line(x1,y1,x2,y2,color,width=1){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
+  function drawFlagBall(cx,cy,r){
+    ctx.save();ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();rect(cx-r,cy-r,r*2,r*2,'#174a8b');
+    line(cx-r,cy-r,cx+r,cy+r,'#fff',r*.57);line(cx+r,cy-r,cx-r,cy+r,'#fff',r*.57);
+    line(cx-r,cy-r,cx+r,cy+r,'#d4351c',r*.22);line(cx+r,cy-r,cx-r,cy+r,'#d4351c',r*.22);
+    rect(cx-r*.22,cy-r,r*.44,r*2,'#fff');rect(cx-r,cy-r*.22,r*2,r*.44,'#fff');rect(cx-r*.12,cy-r,r*.24,r*2,'#d4351c');rect(cx-r,cy-r*.12,r*2,r*.24,'#d4351c');ctx.restore();
+    ctx.fillStyle='rgba(255,255,255,.20)';ctx.beginPath();ctx.ellipse(cx-r*.32,cy-r*.48,r*.43,r*.18,-.55,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke();
+  }
+  function resetGame(){score=0;game={};touchStart=null;draggingBoat=false;setHud()}
+  function begin(id){cancelAnimationFrame(raf);running=false;current=id;home.classList.add('hidden');arcade.classList.remove('hidden');$('gameTitle').textContent=gameNames[id][0];$('gameDesc').textContent=gameNames[id][1];$('overlayTitle').textContent='READY?';$('overlayKicker').textContent='BRITISH ARCADE · GAME READY';$('overlayText').textContent='Press start when you are ready.';$('startBtn').textContent='START GAME →';overlay.classList.remove('hidden');const c=$('controls');c.innerHTML='';
+    if(id==='boats'){addControl('← MOVE LEFT',()=>moveBoat(-1));addControl('MOVE RIGHT →',()=>moveBoat(1));$('helpText').textContent='Drag the Coastguard launch across lanes or tap a lane. Each dinghy that reaches the rescue line in the wrong lane counts as a strike. Five strikes ends the run.'}
+    else if(id==='brexit'){addControl('FLAP / LIFT · SPACE',flap);$('helpText').textContent='Click or tap the playfield, or press Space / ↑. The flag ball has a short lift cooldown to prevent over-sensitive repeated flaps.'}
+    else if(id==='snake'){addControl('↑ UP',()=>setDirection(0,-1));addControl('← LEFT',()=>setDirection(-1,0));addControl('↓ DOWN',()=>setDirection(0,1));addControl('RIGHT →',()=>setDirection(1,0));$('helpText').textContent='Arrow keys or WASD on desktop; swipe or use the buttons on mobile. Collect the hooded figures on the 12 × 12 board, avoid the walls and your own tail.'}
+    else {$('helpText').textContent='Tap any policy card as it rises. A missed card resets your combo and counts as a strike. Five strikes ends the run; the pace and number of targets rise as your score grows.'}
+    resetGame();drawStatic(id);setHud();
+  }
+  function addControl(label,fn){const b=document.createElement('button');b.textContent=label;b.addEventListener('click',fn);$('controls').appendChild(b)}
+  function menu(){running=false;cancelAnimationFrame(raf);arcade.classList.add('hidden');home.classList.remove('hidden');overlay.classList.add('hidden');current='';}
+  function start(){if(!current)return;cancelAnimationFrame(raf);resetGame();running=true;overlay.classList.add('hidden');last=performance.now();initGame();draw();setHud();raf=requestAnimationFrame(loop)}
+  function end(win=false,title='',message=''){
+    if(!running)return;running=false;saveBest();setHud();overlay.classList.remove('hidden');
+    $('overlayTitle').textContent='FAILED TO CONTAIN THE DANGER';$('overlayKicker').textContent='BRITISH ARCADE · GAME OVER';
+    $('overlayText').textContent=`You resigned from PM. (You join the list of the last 10 PMs.)\nFinal score: ${score} · Best: ${bests[current]||score}`;$('startBtn').textContent='PLAY AGAIN ↻';
+  }
+  function initGame(){
+    if(current==='boats')game={playerLane:1,boats:[],spawn:.35,strikes:0,elapsed:0,flash:0};
+    if(current==='brexit')game={ballY:H*.48,vy:0,pipes:[],spawn:.55,flapCooldown:0,elapsed:0,flash:0};
+    if(current==='snake')game={cols:12,rows:12,cell:SNAKE_CELL,snake:[{x:5,y:6},{x:4,y:6},{x:3,y:6}],dir:{x:1,y:0},next:{x:1,y:0},food:{x:9,y:6},step:0,elapsed:0};
+    if(current==='spin')game={holes:[],spawn:.45,combo:0,misses:0,elapsed:0,hitFlash:0,hammer:null};
+  }
+  function drawStatic(id){current=id;if(id==='boats'){game={playerLane:1,boats:[{lane:0,y:72},{lane:2,y:130}],strikes:0}}if(id==='brexit'){game={ballY:175,vy:0,pipes:[{x:330,gapY:180}],flapCooldown:0}}if(id==='snake'){game={cols:12,rows:12,cell:SNAKE_CELL,snake:[{x:5,y:6},{x:4,y:6},{x:3,y:6}],food:{x:9,y:6}}}if(id==='spin'){game={holes:[{idx:1,life:1,slogan:'PENSIONS',hit:false},{idx:5,life:1,slogan:'BURNHAM BUSES',hit:false},{idx:6,life:1,slogan:'MORE MONEY',hit:false}],combo:0,misses:0,hammer:null}}draw();}
+  function loop(now){if(!running)return;const dt=Math.min((now-last)/1000,.035);last=now;update(dt);draw();setHud();if(running)raf=requestAnimationFrame(loop)}
+  function update(dt){
+    if(current==='boats'){
+      game.elapsed+=dt;game.flash=Math.max(0,game.flash-dt);game.spawn-=dt;
+      if(game.spawn<=0){const lane=Math.floor(Math.random()*3);game.boats.push({lane,y:-102,speed:115+Math.min(score*1.4,65),checked:false});game.spawn=Math.max(.5,.82-score*.007)+Math.random()*.28;}
+      const interceptY=H-105;
+      for(const b of game.boats){const before=b.y+48;b.y+=b.speed*dt;const after=b.y+48;if(!b.checked&&before<interceptY&&after>=interceptY){b.checked=true;b.remove=true;if(b.lane===game.playerLane){addScore();game.flash=.28}else{game.strikes++;game.flash=.32;if(game.strikes>=5){game.boats=game.boats.filter(x=>!x.remove);end();return}}}}
+      game.boats=game.boats.filter(b=>!b.remove&&b.y<H+12);
+    } else if(current==='brexit'){
+      game.elapsed+=dt;game.flapCooldown=Math.max(0,game.flapCooldown-dt);game.vy=Math.min(235,game.vy+315*dt);game.ballY+=game.vy*dt;game.spawn-=dt;
+      if(game.spawn<=0){spawnPipe(W+24);game.spawn=1.62;}
+      for(const p of game.pipes){p.x-=112*dt;if(!p.passed&&p.x+PIPE_W<BALL_X-BALL_R){p.passed=true;addScore()}}
+      game.pipes=game.pipes.filter(p=>p.x>-PIPE_W-8);
+      if(game.ballY-BALL_R<5||game.ballY+BALL_R>H-28){end();return}
+      for(const p of game.pipes){
+        const overlapsX=(BALL_X+BALL_R>p.x+3)&&(BALL_X-BALL_R<p.x+PIPE_W-3);
+        const gapTop=p.gapY-PIPE_GAP/2, gapBottom=p.gapY+PIPE_GAP/2;
+        const hitsPillar=game.ballY-BALL_R<gapTop||game.ballY+BALL_R>gapBottom;
+        if(overlapsX&&hitsPillar){end();return}
+      }
+    } else if(current==='snake'){
+      game.elapsed+=dt;game.step+=dt;const speed=Math.max(.085,.135-score*.0009);
+      if(game.step>=speed){game.step-=speed;game.dir=game.next;const head={x:game.snake[0].x+game.dir.x,y:game.snake[0].y+game.dir.y};const gotFood=head.x===game.food.x&&head.y===game.food.y;const body=gotFood?game.snake:game.snake.slice(0,-1);
+        if(head.x<0||head.x>=game.cols||head.y<0||head.y>=game.rows||body.some(s=>s.x===head.x&&s.y===head.y)){end();return}
+        game.snake.unshift(head);if(gotFood){addScore();placeFood()}else game.snake.pop();
+      }
+    } else if(current==='spin'){
+      game.elapsed+=dt;game.spawn-=dt;game.hitFlash=Math.max(0,game.hitFlash-dt);if(game.hammer){game.hammer.life-=dt;if(game.hammer.life<=0)game.hammer=null}
+      for(const h of game.holes)h.life-=dt;
+      game.bits=(game.bits||[]).filter(b=>(b.t-=dt)>0);for(const b of game.bits){b.x+=b.vx*dt;b.y+=b.vy*dt;b.vy+=300*dt}
+      const expired=game.holes.filter(h=>h.life<=0&&!h.hit);if(expired.length){game.misses+=expired.length;game.combo=0;if(game.misses>=5){game.holes=[];end();return}}
+      game.holes=game.holes.filter(h=>h.life>0&&!h.hit);
+      const interval=Math.max(.24,.78-score*.0045);const targetCount=Math.min(5,2+Math.floor(score/12));
+      if(game.spawn<=0&&game.holes.length<targetCount){const occupied=new Set(game.holes.map(h=>h.idx));const open=Array.from({length:9},(_,i)=>i).filter(i=>!occupied.has(i));if(open.length){const idx=open[Math.floor(Math.random()*open.length)];game.holes.push({idx,life:Math.max(.58,1.55-score*.008)+Math.random()*.25,slogan:policies[Math.floor(Math.random()*policies.length)],pal:placards[Math.floor(Math.random()*placards.length)],hit:false});}game.spawn=interval+Math.random()*.22;}
+    }
+  }
+  function spawnPipe(x){const min=PIPE_GAP/2+16,max=H-30-PIPE_GAP/2-16;const gapY=min+Math.random()*(max-min);game.pipes.push({x,gapY,passed:false,topLabel:Math.random()<.5?'LEAVE EU':'BREXIT'});}
+  function flap(){if(current==='brexit'&&running&&game.flapCooldown<=0){game.vy=-165;game.flapCooldown=.17}}
+  function moveBoat(delta){if(current==='boats'&&running)game.playerLane=Math.max(0,Math.min(2,game.playerLane+delta))}
+  function setDirection(x,y){if(current!=='snake'||!running)return;if(x===-game.dir.x&&y===-game.dir.y)return;game.next={x,y}}
+  function placeFood(){let f;do{f={x:Math.floor(Math.random()*game.cols),y:Math.floor(Math.random()*game.rows)}}while(game.snake.some(s=>s.x===f.x&&s.y===f.y));game.food=f}
+  function draw(){if(current==='boats')drawBoats(false);if(current==='brexit')drawBrexit(false);if(current==='snake')drawSnake(false);if(current==='spin')drawSpin(false)}
+  function drawSea(){
+    rect(0,0,W,H,'#126b8a');
+    const total=Math.floor((game.elapsed||0)*18),base=Math.floor(total/36),sc=total%36;
+    for(let row=-1;row<=Math.ceil(H/36);row++){
+      const idx=row-base+1000,y=row*36+sc;
+      for(let k=0;k<6;k++){
+        const x=((idx*73+k*109+k*k*13)%(W-34));
+        const wv=16+((k+idx)%3)*6;
+        rect(x,y,wv,2,(k+idx)%2?'#1c7f9f':'#0e5e7e');
+        if((k+idx)%3===0)rect(x+4,y+8,Math.floor(wv/2),2,'rgba(185,231,239,.28)');
+      }
+    }
+  }
+  function drawBoats(preview){
+    drawSea();rect(0,0,W,44,'#102a43');rect(0,42,W,4,'#3c9878');
+    // Straight, equally sized lanes make the hitboxes line up with the boat centres.
+    for(let yy=50;yy<H;yy+=14){rect(199,yy,2,7,'rgba(232,242,247,.45)');rect(399,yy,2,7,'rgba(232,242,247,.45)')}
+    for(let i=0;i<3;i++){pxText('LANE '+(i+1),laneX[i],14,11,'#e8f2f7','center');rect(laneX[i]-23,50,46,3,'rgba(255,255,255,.32)')}
+    // Rescue / intercept line
+    for(let xx=10;xx<W-10;xx+=14)rect(xx,H-106,8,2,'rgba(255,255,255,.7)');pxText('RESCUE LINE',W-14,H-121,8,'#d7edf2','right');
+    for(const b of (game.boats||[]))drawDinghy(laneX[b.lane],b.y);
+    drawCoastguard(laneX[game.playerLane??1],H-74);
+    if(game.flash>0){rect(0,46,W,3,game.strikes?'#d4351c':'#75e0a5');}
+    if(preview){drawDinghy(laneX[0],82);drawDinghy(laneX[2],138)}
+  }
+  function drawDinghy(cx,y){
+    // Wake trails behind the engine (the engine end is at the top: boats travel down the screen)
+    rect(cx-12,y-4,24,2,'rgba(255,255,255,.38)');rect(cx-8,y-10,16,2,'rgba(255,255,255,.26)');rect(cx-4,y-16,8,2,'rgba(255,255,255,.16)');
+    rect(cx-27,y+6,3,84,'rgba(8,60,84,.35)');rect(cx+24,y+6,3,84,'rgba(8,60,84,.35)');
+    ctx.drawImage(dinghySprite,0,0,18,32,Math.round(cx-27),Math.round(y),54,96);
+  }
+  function drawCoastguard(cx,y){
+    // Coastguard launch, bow pointing up the screen
+    rect(cx-10,y+50,20,2,'rgba(255,255,255,.4)');rect(cx-6,y+56,12,2,'rgba(255,255,255,.26)');
+    ctx.drawImage(launchSprite,0,0,12,20,Math.round(cx-18),Math.round(y-10),36,60);
+  }
+  function drawPillar(p,top){
+    const gapTop=p.gapY-PIPE_GAP/2,gapBottom=p.gapY+PIPE_GAP/2;
+    if(top){const h=gapTop;rect(p.x-3,0,PIPE_W+6,h,'#153f5e');rect(p.x,0,PIPE_W,h,'#d8e4eb');rect(p.x+5,0,PIPE_W-10,h,'#eef3f6');rect(p.x-6,Math.max(0,h-12),PIPE_W+12,12,'#d4351c');rect(p.x-3,Math.max(0,h-12),PIPE_W+6,3,'#102a43');if(h>52){const lbl=p.topLabel||'BREXIT';pxText(lbl,p.x+PIPE_W/2,h-30,lbl.length>6?7:8,'#102a43','center');}}
+    else{const y=gapBottom,h=H-30-y;rect(p.x-3,y,PIPE_W+6,h,'#153f5e');rect(p.x,y,PIPE_W,h,'#d8e4eb');rect(p.x+5,y,PIPE_W-10,h,'#eef3f6');rect(p.x-6,y,PIPE_W+12,12,'#d4351c');rect(p.x-3,y+9,PIPE_W+6,3,'#102a43');if(h>52){pxText('BREXIT',p.x+PIPE_W/2,y+22,8,'#102a43','center');}}
+  }
+  function drawBrexit(preview){
+    rect(0,0,W,H,'#add7eb');
+    // Subtle cloud shapes and distant landscape.
+    for(const [x,y,w] of [[42,48,52],[210,86,38],[455,42,58]]){rect(x,y,w,5,'#fff');rect(x+8,y-6,w-18,6,'#fff');rect(x+14,y-10,w-28,4,'#f4fbff')}
+    rect(0,H-30,W,30,'#2f825b');rect(0,H-30,W,3,'#f3e9cc');for(let x=10;x<W;x+=26)rect(x,H-15,12,2,'#4b9866');
+    for(const p of (game.pipes||[])){drawPillar(p,true);drawPillar(p,false)}
+    drawFlagBall(BALL_X,game.ballY??H*.48,BALL_R);
+    pxText('SPACE / TAP TO FLAP',14,H-21,9,'#103b5a');
+  }
+  function drawSnake(preview){
+    const cell=SNAKE_CELL,ox=BOARD_X,N=BOARD_N;
+    // Side panels
+    rect(0,0,W,H,'#102a43');
+    for(let y=0;y<H;y+=24){rect(0,y,ox-8,2,'#163b5c');rect(ox+N*cell+8,y,ox-8,2,'#163b5c')}
+    pxText('LONDON',ox/2-4,H/2-14,12,'#f4c95d','center');pxText('12 × 12',ox/2-4,H/2+4,10,'#8fb0c8','center');
+    pxText('FIND THE',ox+N*cell+ox/2+4,H/2-14,10,'#f4c95d','center');pxText('SHANKS',ox+N*cell+ox/2+4,H/2+2,10,'#f4c95d','center');
+    // Proper chequered 12x12 grid with clear lines
+    for(let r=0;r<N;r++)for(let c=0;c<N;c++)rect(ox+c*cell,r*cell,cell,cell,(r+c)%2?'#34586f':'#2c4c61');
+    for(let i=0;i<=N;i++){rect(ox+i*cell-1,0,2,N*cell,'#1f3a4d');rect(ox,i*cell-1,N*cell,2,'#1f3a4d')}
+    rect(ox-3,0,3,H,'#f4c95d');rect(ox+N*cell,0,3,H,'#f4c95d');
+    const s=game.snake||[{x:5,y:6},{x:4,y:6},{x:3,y:6}];
+    const cx=v=>ox+v*cell+cell/2,cy=v=>v*cell+cell/2;
+    // Ribbon joining the figures
+    for(let i=1;i<s.length;i++){
+      const a=s[i-1],b=s[i],ax=cx(a.x),ay=cy(a.y),bx=cx(b.x),by=cy(b.y);
+      rect(Math.min(ax,bx)-6,Math.min(ay,by)-6,Math.abs(ax-bx)+12,Math.abs(ay-by)+12,'#0f1a24');
+    }
+    const f=game.food||{x:9,y:6};
+    ctx.fillStyle='rgba(244,201,93,.28)';ctx.beginPath();ctx.arc(cx(f.x),cy(f.y),cell*.5,0,Math.PI*2);ctx.fill();
+    drawHoodedShank(cx(f.x),cy(f.y),false);
+    for(let i=s.length-1;i>=0;i--)drawHoodedShank(cx(s[i].x),cy(s[i].y),i===0);
+  }
+  function drawHoodedShank(cx,cy,isHead){
+    // Stylised non-graphic pixel figure with a tiny silver shank silhouette.
+    cx=Math.round(cx);cy=Math.round(cy);
+    rect(cx-6,cy-8,12,6,isHead?'#f4c95d':'#111d2a');rect(cx-8,cy-3,16,12,'#202d39');rect(cx-4,cy-2,8,5,'#bc8b69');rect(cx-3,cy,2,2,'#172433');rect(cx+2,cy,2,2,'#172433');rect(cx-6,cy+7,5,4,'#7d8d99');rect(cx+2,cy+7,5,4,'#7d8d99');rect(cx+7,cy+1,3,5,'#855638');rect(cx+9,cy-4,3,7,'#d5e2eb');rect(cx+10,cy-6,2,3,'#fff');
+  }
+  function spinSlot(i){const col=i%3,row=Math.floor(i/3);return {x:45+col*184,y:40+row*101,w:144,h:78}}
+  function drawSpin(preview){
+    rect(0,0,W,H,'#e7eff5');rect(0,0,W,43,'#102a43');pxText('THE POLICY PROMISE MACHINE',16,13,12,'#fff');pxText('5 MISSES = RESIGN',W-15,15,9,'#f4c95d','right');
+    ['#d4351c','#f2a900','#16a05a','#1769aa','#8a3ffc','#e5338d'].forEach((c,k)=>rect(k*100,40,100,4,c));
+    // Room for nine clear targets; each card has a shadow and a distinct slot.
+    for(let i=0;i<9;i++){const s=spinSlot(i);rect(s.x+3,s.y+6,s.w,s.h,'#c3d2df');rect(s.x,s.y+4,s.w,s.h-4,'#6b8295');rect(s.x+5,s.y+10,s.w-10,s.h-16,'#233c51');rect(s.x+13,s.y+20,s.w-26,s.h-32,'#172b3f');
+      const active=(game.holes||[]).find(h=>h.idx===i);
+      if(active){
+        const pal=active.pal||placards[0];
+        const rise=Math.min(15,Math.max(0,(1.4-active.life)*20));const y=s.y+12-rise;
+        rect(s.x+8,y+4,s.w-16,s.h-19,'#102a43');rect(s.x+11,y,s.w-22,s.h-25,pal.bg);rect(s.x+11,y,s.w-22,7,pal.bar);rect(s.x+17,y+15,s.w-34,2,pal.bar);
+        const fs=active.slogan.length>14?8:active.slogan.length>10?9:10;pxText(active.slogan,s.x+s.w/2,y+25,fs,'#102a43','center');rect(s.x+18,y+s.h-41,13,3,pal.bar);rect(s.x+37,y+s.h-41,s.w-64,3,pal.bar);rect(s.x+s.w/2-3,y+s.h-25,6,10,'#a8763e');
+      }else{ctx.fillStyle='#132b40';ctx.beginPath();ctx.ellipse(s.x+s.w/2,s.y+49,27,8,0,0,Math.PI*2);ctx.fill();rect(s.x+s.w/2-24,s.y+49,48,4,'#5d7487')}
+    }
+    pxText('MISSED CARDS: '+(game.misses||0)+'/5',W-13,H-18,9,(game.misses||0)>=3?'#d4351c':'#102a43','right');
+    for(const b of (game.bits||[]))rect(b.x,b.y,5,5,b.c);
+    if(game.hammer){ctx.save();ctx.translate(game.hammer.x,game.hammer.y);ctx.rotate(-.45);rect(-4,-2,8,34,'#81542f');rect(-18,-14,34,15,'#d4351c');rect(-15,-11,28,9,'#f3c95d');ctx.restore()}
+  }
+  function pointInSlot(p,i){const s=spinSlot(i);return p.x>=s.x&&p.x<=s.x+s.w&&p.y>=s.y&&p.y<=s.y+s.h}
+  function canvasPoint(e){const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height}}
+  function handleCanvasClick(e){if(!running)return;const p=canvasPoint(e);
+    if(current==='boats'){game.playerLane=Math.max(0,Math.min(2,Math.floor(p.x/laneW)));return}
+    if(current==='brexit'){flap();return}
+    if(current==='spin'){
+      const h=(game.holes||[]).find(h=>pointInSlot(p,h.idx));game.hammer={x:p.x,y:p.y,life:.16};
+      if(h){h.hit=true;h.life=0;addScore();game.combo++;game.hitFlash=.12;game.bits=game.bits||[];const cols=['#d4351c','#1769aa','#16a05a','#f2a900','#8a3ffc','#ff6f1f','#e5338d','#0aa8a8'];for(let k=0;k<14;k++)game.bits.push({x:p.x,y:p.y,vx:(Math.random()-.5)*260,vy:-60-Math.random()*190,t:.5+Math.random()*.3,c:cols[k%cols.length]})}else{game.combo=0;}return;
+    }
+  }
+  canvas.addEventListener('pointerdown',e=>{e.preventDefault();if(current==='snake'){touchStart=canvasPoint(e);return}if(current==='boats'&&running){draggingBoat=true;game.playerLane=Math.max(0,Math.min(2,Math.floor(canvasPoint(e).x/laneW)));return}handleCanvasClick(e)});
+  canvas.addEventListener('pointermove',e=>{if(current==='boats'&&draggingBoat&&running){game.playerLane=Math.max(0,Math.min(2,Math.floor(canvasPoint(e).x/laneW)))}});
+  window.addEventListener('pointerup',e=>{draggingBoat=false;if(current==='snake'&&touchStart&&running){const p=canvasPoint(e),dx=p.x-touchStart.x,dy=p.y-touchStart.y;if(Math.abs(dx)+Math.abs(dy)>18){if(Math.abs(dx)>Math.abs(dy))setDirection(dx>0?1:-1,0);else setDirection(0,dy>0?1:-1)}touchStart=null}});
+  window.addEventListener('keydown',e=>{
+    if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();
+    if(!running||e.repeat)return;
+    if(current==='boats'){if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a')moveBoat(-1);if(e.key==='ArrowRight'||e.key.toLowerCase()==='d')moveBoat(1)}
+    if(current==='brexit'&&(e.key===' '||e.key==='ArrowUp'||e.key.toLowerCase()==='w'))flap();
+    if(current==='snake'){if(e.key==='ArrowUp'||e.key.toLowerCase()==='w')setDirection(0,-1);if(e.key==='ArrowDown'||e.key.toLowerCase()==='s')setDirection(0,1);if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a')setDirection(-1,0);if(e.key==='ArrowRight'||e.key.toLowerCase()==='d')setDirection(1,0)}
+  });
+  document.querySelectorAll('[data-game]').forEach(b=>b.addEventListener('click',()=>begin(b.dataset.game)));
+  $('menuBtn').addEventListener('click',menu);$('startBtn').addEventListener('click',start);$('playAllBtn').addEventListener('click',()=>$('cabinets').scrollIntoView({behavior:'smooth'}));$('howBtn').addEventListener('click',()=>$('cabinets').scrollIntoView({behavior:'smooth'}));
+  current='boats';drawStatic('boats');current='';
+})();
+</script>
+</body></html>
